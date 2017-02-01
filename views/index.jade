@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ .app#app
+  h1 Tasks
+  //- button(v-on:click="fetchData") Fetch Data
+  ul
+    li(v-for="task in tasks") {{task.value}}
+  p
+    input(v-model="task")
+    button(v-on:click="newTask") Add New Task
+  
+  p
+    button(v-on:click="saveData") Save Tasks to Firebase
